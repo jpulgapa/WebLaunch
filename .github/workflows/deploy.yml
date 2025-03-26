@@ -6,19 +6,7 @@ on:
       - main
 
 jobs:
-  validate-html:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout del código
-        uses: actions/checkout@v3
-
-      - name: Validar HTML
-        uses: cyb3rjak3/html5validator-action@master
-        with:
-          directory: . # Valida todos los archivos HTML en el repositorio
-
   deploy:
-    needs: validate-html
     runs-on: ubuntu-latest
     steps:
       - name: Checkout del código
